@@ -32,7 +32,7 @@ namespace CSharpEgitimKampi601
             };
 
             customerOperations.AddCustomer(customer);
-            MessageBox.Show("Musteri Ekleme Islemi Basarili!","Uyari",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Musteri Ekleme Islemi Basarili.","Uyari",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }
