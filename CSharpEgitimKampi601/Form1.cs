@@ -34,5 +34,11 @@ namespace CSharpEgitimKampi601
             customerOperations.AddCustomer(customer);
             MessageBox.Show("Musteri Ekleme Islemi Basarili.","Uyari",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
+
+        private void btnCustomerList_Click(object sender, EventArgs e)
+        {
+            List<Customer> customers = customerOperations.GetAllCustomer();
+            dataGridView1.DataSource = customers;
+        }
     }
 }
