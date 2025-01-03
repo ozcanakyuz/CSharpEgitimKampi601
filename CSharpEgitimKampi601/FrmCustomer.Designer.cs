@@ -97,6 +97,7 @@
             this.btnCustomerCreate.TabIndex = 31;
             this.btnCustomerCreate.Text = "Ekle";
             this.btnCustomerCreate.UseVisualStyleBackColor = false;
+            this.btnCustomerCreate.Click += new System.EventHandler(this.btnCustomerCreate_Click);
             // 
             // btnCustomerList
             // 

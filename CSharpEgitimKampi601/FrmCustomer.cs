@@ -36,5 +36,24 @@ namespace CSharpEgitimKampi601
         {
             GetAllCustomers();
         }
+
+        private void btnCustomerCreate_Click(object sender, EventArgs e)
+        {
+            string customerName = txtCustomerName.Text;
+            string customerSurname = txtCustomerSurname.Text;
+            string customerCity = txtCustomerCity.Text;
+            var connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            string query = "Insert into Customers (CustomerName, CustomerSurname, CustomerCity) values" +
+                "(@customerName, @customerSurname, @customerCity)";
+            var command = new NpgsqlCommand(query, connection);
+            command.Parameters.AddWithValue("@customerName", customerName);
+            command.Parameters.AddWithValue("@customerSurname", customerSurname);
+            command.Parameters.AddWithValue("@customerCity", customerCity);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Ekleme Islemi Basarili!");
+            connection.Close();
+            GetAllCustomers();
+        }
     }
 }
