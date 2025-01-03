@@ -55,5 +55,19 @@ namespace CSharpEgitimKampi601
             connection.Close();
             GetAllCustomers();
         }
+
+        private void btnCustomerDelete_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtCustomerId.Text);
+            var connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            string query = "Delete From Customers Where CustomerId = @customerId";
+            var command = new NpgsqlCommand(query, connection);
+            command.Parameters.AddWithValue("@customerId", id);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Silme Islemi Tamamlandi");
+            connection.Close();
+            GetAllCustomers();
+        }
     }
 }
