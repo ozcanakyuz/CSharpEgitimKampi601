@@ -75,6 +75,7 @@
             this.btnCustomerUpdate.TabIndex = 33;
             this.btnCustomerUpdate.Text = "Güncelle";
             this.btnCustomerUpdate.UseVisualStyleBackColor = false;
+            this.btnCustomerUpdate.Click += new System.EventHandler(this.btnCustomerUpdate_Click);
             // 
             // btnCustomerDelete
             // 

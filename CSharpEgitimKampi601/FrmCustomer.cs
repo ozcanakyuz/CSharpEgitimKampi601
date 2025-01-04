@@ -24,7 +24,7 @@ namespace CSharpEgitimKampi601
         {
             var connection = new NpgsqlConnection(connectionString);
             connection.Open();
-            string query = "Select * From Customers";
+            string query = "Select * From Customers order by CustomerId";
             var command = new NpgsqlCommand(query, connection);
             var adapter = new NpgsqlDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -66,6 +66,26 @@ namespace CSharpEgitimKampi601
             command.Parameters.AddWithValue("@customerId", id);
             command.ExecuteNonQuery();
             MessageBox.Show("Silme Islemi Tamamlandi");
+            connection.Close();
+            GetAllCustomers();
+        }
+
+        private void btnCustomerUpdate_Click(object sender, EventArgs e)
+        {
+            string customerName = txtCustomerName.Text;
+            string customerSurname = txtCustomerSurname.Text;
+            string customerCity = txtCustomerCity.Text;
+            int customerId = int.Parse(txtCustomerId.Text);
+            var connection = new NpgsqlConnection(connectionString);
+            connection.Open();
+            string query = "Update Customers Set CustomerName=@customerName, CustomerSurname=@customerSurname, CustomerCity=@customerCity where CustomerId=@customerId";
+            var command = new NpgsqlCommand(query, connection);
+            command.Parameters.AddWithValue("customerName", customerName);
+            command.Parameters.AddWithValue("customerSurname", customerSurname);
+            command.Parameters.AddWithValue("customerCity", customerCity);
+            command.Parameters.AddWithValue("customerId", customerId);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Guncelleme Islemi Tamamlandi");
             connection.Close();
             GetAllCustomers();
         }
