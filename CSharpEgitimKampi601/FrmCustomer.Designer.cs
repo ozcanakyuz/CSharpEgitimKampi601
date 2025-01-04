@@ -53,7 +53,7 @@
             this.btnCustomerGet.Name = "btnCustomerGet";
             this.btnCustomerGet.Size = new System.Drawing.Size(305, 54);
             this.btnCustomerGet.TabIndex = 35;
-            this.btnCustomerGet.Text = "Id\'ye İsme veya Soyisime göre getir";
+            this.btnCustomerGet.Text = "ID\'ye Gore Getir";
             this.btnCustomerGet.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
