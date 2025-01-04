@@ -64,7 +64,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(320, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(499, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(580, 307);
             this.dataGridView1.TabIndex = 48;
             // 
             // btnUpdate
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 341);
+            this.ClientSize = new System.Drawing.Size(912, 341);
             this.Controls.Add(this.cmbEmployeeDepartment);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGetById);
